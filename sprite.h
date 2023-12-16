@@ -10,7 +10,7 @@ public:
 	/// Default constructor for the Sprite class. Sets the position to 0,0.
 	/// </summary>
 	Sprite();
-	Sprite(int x, int y);
+	Sprite(int x, int y, int p_renderIndex);
 	void setPosition(int x , int y);
 	/// <summary>
 	/// Renders the sprite. Normally isn't called by the user and called once every frame in the main game loop.

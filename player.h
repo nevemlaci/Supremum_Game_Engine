@@ -4,8 +4,7 @@
 
 class Player: public Sprite {
 public:
-	Player();
-	Player(int x, int y);
+	using Sprite::Sprite;
 	/// <summary>
 	/// Moves the player based on the input.
 	/// </summary>

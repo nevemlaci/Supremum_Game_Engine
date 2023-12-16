@@ -5,9 +5,23 @@ Game::Game() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
 	spriteSheet = IMG_LoadTexture(renderer, "spritemap.png");
 	input = Input();
-	//HWND console = GetConsoleWindow();
-	//ShowWindow(console, SW_HIDE);
+}
 
+Game::Game(
+	int window_x,
+	int window_y,
+	int window_width,
+	int window_height,
+	bool hide_console){
+
+	window = SDL_CreateWindow("", window_x, window_y, window_width, window_height, 0);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
+	spriteSheet = IMG_LoadTexture(renderer, "spritemap.png");
+	input = Input();
+	if(hide_console) {
+		HWND console = GetConsoleWindow();
+		ShowWindow(console, SW_HIDE);
+	}
 }
 
 int Game::addObject(Sprite* object_ptr) {

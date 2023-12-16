@@ -9,12 +9,12 @@ Sprite::Sprite() {
 	renderIndex = 0;
 }
 
-Sprite::Sprite(int x, int y) {
+Sprite::Sprite(int x, int y, int p_renderIndex) {
 	position.x = x;
 	position.y = y;
 	position.w = SPRITE_SIZE;
 	position.h = SPRITE_SIZE;
-	renderIndex = 0;
+	renderIndex = p_renderIndex;
 }
 
 void Sprite::setPosition(int x, int y) {

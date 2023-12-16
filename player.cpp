@@ -1,5 +1,6 @@
 #include "player.h"
 #include "game.h"
+/*
 
 Player::Player() {
 	position.x = 0;
@@ -10,6 +11,8 @@ Player::Player() {
 	velX = 0;
 	velY = 0;
 }
+*/
+/*
 
 Player::Player(int x, int y) {
 	position.x = x;
@@ -20,6 +23,7 @@ Player::Player(int x, int y) {
 	velX = 0;
 	velY = 0;
 }
+*/
 
 int Player::Update(Game* game) {
 	Keys keys = game->input.getKeys();

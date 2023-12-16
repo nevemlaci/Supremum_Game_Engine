@@ -13,15 +13,14 @@
 
 		To add a sprite you can use the addObeject method
 		of the Game class.
-
+		
+		There is an example player class that inherits from Sprite.
 		
 */
 int main(int argc, char** argv) {
-	Game game;
 
-	Player sprite2(500,100);
-	sprite2.setRenderIndex(1);
-	game.addObject(&sprite2);
+	Game game(100, 100, 700, 700, true);
+	game.addObject(new Player(100, 100, 1));
 	game.mainLoop();
 	return 0;
 }
