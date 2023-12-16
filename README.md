@@ -12,3 +12,6 @@ This is a hobby project to familiarize myself with OOP and C++ in general. You'l
 * Put the `.lib` and `.dll`(Windows) files in a `./lib` directory(path is relative to `game.vcproj`). 
 
 * Run it using Visual Studio. :) If you run into any problems check the project setup and try to set the linker up manually.
+
+## Installing
+  If you do not want to use git to clone the project, a(non compiled) version is available under Releases with the dependencies pre-packaged. Please note that Releases might not be updated as frequently as the source code.
