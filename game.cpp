@@ -2,7 +2,7 @@
 
 Game::Game() {
 	window = SDL_CreateWindow("", 400, 400, 800, 480, 0);
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
 	spriteSheet = IMG_LoadTexture(renderer, "spritemap.png");
 	input = Input();
 	//HWND console = GetConsoleWindow();
@@ -40,7 +40,6 @@ int Game::mainLoop() {
 			sprite->Render(renderer, sprite->getRenderIndex(), spriteSheet);
 		}
 		SDL_RenderPresent(renderer);
-	
 	}
 	return 1;
 }
