@@ -9,7 +9,7 @@ This is a hobby project to familiarize myself with OOP and C++ in general. You'l
 
 * Then open game.sln in Visual Studio. Install SDL2 from their Github Repo either by building it or downloading it from releases: https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5
 
-* Put the `.lib` and `.dll`(Windows) files in a `./lib` directory(path is relative to `game.sln`). 
+* Put the `.lib` and `.dll`(Windows) files in a `./lib` directory(path is relative to `game.sln`). VS might ask you to drop the dlls into the parent folder too.
 
 * Run it using Visual Studio. :) If you run into any problems check the project setup and try to set the linker up manually.
 
