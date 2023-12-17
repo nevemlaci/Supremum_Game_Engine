@@ -4,6 +4,7 @@
 
 class Player: public Sprite {
 public:
+	//Inherit the constructor from Sprite
 	using Sprite::Sprite;
 	/// <summary>
 	/// Moves the player based on the input.
