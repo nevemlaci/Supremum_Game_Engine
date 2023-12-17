@@ -29,7 +29,7 @@ int Game::addObject(Sprite* object_ptr) {
 		return 0;
 }
 
-void Game::addPlayer(Player p_player) {
+void Game::addPlayer(ExamplePlayer p_player) {
 	player = p_player;
 }
 

@@ -20,7 +20,7 @@
 int main(int argc, char** argv) {
 
 	Game game(100, 100, 700, 700, true);
-	game.addObject(new Player(100, 100, 1));
+	game.addObject(new ExamplePlayer(100, 100, 1));
 	game.mainLoop();
 	return 0;
 }

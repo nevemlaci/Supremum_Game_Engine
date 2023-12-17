@@ -2,7 +2,7 @@
 #include "game.h"
 
 
-int Player::Update(Game* game) {
+int ExamplePlayer::Update(Game* game) {
 	Keys keys = game->input.getKeys();
 	velY = - keys.b_up + keys.b_down;
 	velX = keys.b_right - keys.b_left;

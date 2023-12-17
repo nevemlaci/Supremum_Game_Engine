@@ -2,7 +2,7 @@
 #include "sprite.h"
 #include "input.h"
 
-class Player: public Sprite {
+class ExamplePlayer: public Sprite {
 public:
 	//Inherit the constructor from Sprite
 	using Sprite::Sprite;

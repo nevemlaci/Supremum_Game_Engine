@@ -57,7 +57,7 @@ public:
 	/// The player to be added.
 	/// NULL should be passed if no player is needed, or if a custom player class is used.
 	/// </param>
-	void addPlayer(Player p_player);
+	void addPlayer(ExamplePlayer p_player);
 
 	/// <summary>
 	/// The input handler of the game. It is used to handle all input events.
@@ -82,7 +82,7 @@ private:
 	/// <summary>
 	/// The player of the game. Not necessary to be used. 
 	/// </summary>
-	Player player;
+	ExamplePlayer player;
 
 	/// <summary>
 	/// Array of Sprite pointers. It stores all objects in the game that are inheriting from Sprite.
