@@ -4,7 +4,7 @@
 
 class Game;
 
-class Sprite {
+class Sprite{
 public:
 	/// <summary>
 	/// Default constructor for the Sprite class. Sets the position to 0,0.

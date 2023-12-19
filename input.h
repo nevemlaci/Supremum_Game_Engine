@@ -20,7 +20,6 @@ struct Mouse {
 	bool middleclick;
 };
 
-
 class Input {
 public:
 	Input();

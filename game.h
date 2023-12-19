@@ -8,6 +8,7 @@
 #include <vector>
 #include <windows.h>
 
+
 class Game {
 public:
 	/// <summary>
@@ -87,5 +88,5 @@ private:
 	/// <summary>
 	/// Array of Sprite pointers. It stores all objects in the game that are inheriting from Sprite.
 	/// </summary>
-	std::vector<Sprite*> objects;
+	std::vector<Sprite*> sprites;
 };
