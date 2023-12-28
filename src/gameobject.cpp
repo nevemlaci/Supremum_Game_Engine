@@ -1,10 +1,6 @@
 #include "gameobject.h"
 #include "game.h"
 
-GameObject::GameObject() {
-	id="";
-}
-
 GameObject::GameObject(std::string p_id) {
 	id=p_id;
 }

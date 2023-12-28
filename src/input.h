@@ -3,6 +3,8 @@
 #include <iostream>
 #include <vector>
 
+///@todo rework input handling to be more flexible and less hardcoded
+
 /// <summary>
 /// Stores the state of the specified up, down, left and right keys.
 /// </summary>

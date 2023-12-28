@@ -15,14 +15,12 @@
 class Game {
 public:
 
-	/// <summary>
-	/// Advanced constructor. It is used to initialize the game.
-	/// </summary>
-	/// <param name="window_x">Window X position</param>
-	/// <param name="window_y">Window Yposition</param>
-	/// <param name="window_width">Window width</param>
-	/// <param name="window_height">Window height</param>
-	/// <param name="hide_console">If the console window should be hidden or not.</param>
+	/// @brief Game constructor, if all parameters are left empty, the game will be created with default values.
+	/// @param window_x Window x position
+	/// @param window_y Window y position
+	/// @param window_width Window width
+	/// @param window_height Window height
+	/// @param hide_console Wether to hide the console or not
 	Game(
 		int window_x=400,
 		int window_y=400,
@@ -31,36 +29,32 @@ public:
 		bool hide_console=false
 	);
 
+	/// @brief Hides the console window
 	void hideConsole();
 
-	/// <summary>
-	/// The main loop of the game. Could be edited for customization.
-	/// </summary>
-	/// <returns>
-	/// returns 0 on ecpected exit | returns 1 on unexpected exit
-	/// </returns>
+	/// @brief The main loop of the game. Should be called after all objects are added.
+	/// @return returns 0 on expected exit and 1 on unexpected exit
 	int mainLoop();
 
-	/// <summary>
-	/// Adds an object to the game. Shouldn't be called on player.
-	/// </summary>
-	/// <param name="object_ptr">Pointer to the object to be added.
-	/// The object must be the child of Sprite
-	/// </param>
-	/// <returns>
-	/// returns 0 on success
-	/// </returns>
+	/// @brief adds an object to the game
+	/// @param object_ptr Pointer to the object to be added. All objects that inherit from GameObject can be added.
+	/// @return returns 0 on success
 	int addObject(GameObject* object_ptr);
 
-	/// <summary>
-	/// The input handler of the game. It is used to handle all input events.
-	/// </summary>
+	/// @brief The input handler of the game.
+	/// @todo Rework
 	Input input;
 
+	/// @brief 
+	/// @return returns the sprite sheet of the game
 	SDL_Texture* getSpriteSheet();
 
+	/// @brief 
+	/// @return returns the SDL_Renderer* of the game 
 	SDL_Renderer* getRenderer();
 
+	/// @brief 
+	/// @return returns a reference to the game's AudioManager
 	AudioManager& Audio();
 private:
 	
@@ -70,19 +64,14 @@ private:
 
 	AudioManager audioManager;
 
-	/// <summary>
-	/// The spritesheet of the game. It is used to store all sprite textures.It is used to reduce the number of textures loaded into the game.
-	/// </summary>
+	/// @brief The sprite sheet of the game. Used to store all textures used in the game to improve performance.
 	SDL_Texture* spriteSheet;
 	
-	/// <summary>
-	/// The current SDL event.
-	/// </summary>
+	/// @brief The current SDL_Event of the game
 	SDL_Event events;
 
-	/// <summary>
-	/// Array of GameObject pointers. It stores all objects in the game that are inheriting from GameObject.
-	/// </summary>
+	/// @brief  A map of all objects in the game.
+	/// @todo fix memory leak when adding object of the same id
 	std::map<std::string,GameObject*> objects;
 
 
