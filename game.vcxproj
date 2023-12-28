@@ -41,7 +41,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -135,25 +135,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="audio.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="gameobject.cpp" />
-    <ClCompile Include="input.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="player.cpp" />
-    <ClCompile Include="sprite.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="audio.h" />
-    <ClInclude Include="constants.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="gameobject.h" />
-    <ClInclude Include="input.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="sprite.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\audio.cpp" />
+    <ClCompile Include="src\game.cpp" />
+    <ClCompile Include="src\gameobject.cpp" />
+    <ClCompile Include="src\input.cpp" />
+    <ClCompile Include="src\sprite.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\audio.h" />
+    <ClInclude Include="src\constants.h" />
+    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\gameobject.h" />
+    <ClInclude Include="src\input.h" />
+    <ClInclude Include="src\sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
