@@ -1,6 +1,6 @@
 # Supremum
 
-Supremum is an open source 2D game engine written in C++ using the (originally C) library SDL2. 
+SUPREMUM GAME ENGINE is my first take at creating something actually object oriented. It is some sort of an SDL wrapper for C++ with some basic extensions to make creating games easier.
 
 This is a hobby project to familiarize myself with OOP and C++ in general. You'll see some stuff that would hurt the eyes of an experienced programmer.
 
