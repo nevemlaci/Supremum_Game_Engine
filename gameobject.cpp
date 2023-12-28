@@ -1,0 +1,18 @@
+#include "gameobject.h"
+#include "game.h"
+
+GameObject::GameObject() {
+	id="";
+}
+
+GameObject::GameObject(std::string p_id) {
+	id=p_id;
+}
+
+int GameObject::Update(Game* game) {
+	return 0;
+}
+
+std::string GameObject::GetId() {
+	return id;
+}

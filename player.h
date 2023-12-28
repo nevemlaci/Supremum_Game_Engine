@@ -10,7 +10,7 @@ public:
 	/// Moves the player based on the input.
 	/// </summary>
 	/// <param name="input">Pointer of the input class.</param>
-	int Update(Game* game);
+	virtual int Update(Game* game);
 protected:
 	int velX;
 	int velY;

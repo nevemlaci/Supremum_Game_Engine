@@ -24,13 +24,9 @@ Game::Game(
 	}
 }
 
-int Game::addObject(Sprite* object_ptr) {
-		sprites.push_back(object_ptr);
-		return 0;
-}
-
-void Game::addPlayer(ExamplePlayer p_player) {
-	player = p_player;
+int Game::addObject(GameObject* object_ptr) {
+	objects[object_ptr->GetId()] = object_ptr;
+	return 0;
 }
 
 int Game::mainLoop() {
@@ -49,11 +45,18 @@ int Game::mainLoop() {
 			}
 		}
 		SDL_RenderClear(renderer);
-		for (Sprite* sprite : sprites) {
-			sprite->Update(this);
-			sprite->Render(renderer, sprite->getRenderIndex(), spriteSheet);
+		for (auto object : objects) {
+			object.second->Update(this);
 		}
 		SDL_RenderPresent(renderer);
 	}
 	return 1;
+}
+
+SDL_Texture* Game::getSpriteSheet() {
+	return spriteSheet;
+}
+
+SDL_Renderer* Game::getRenderer() {
+	return renderer;
 }

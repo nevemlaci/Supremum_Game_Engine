@@ -9,7 +9,7 @@
 /*
 	To get started:
 		There is a Sprite class that you can use to create a basic sprite.
-		You can create a more complex object by inheriting from Sprite.
+		You can create a more complex object by inheriting from Sprite/GameObject.
 
 		To add a sprite you can use the addObeject method
 		of the Game class.
@@ -20,7 +20,9 @@
 int main(int argc, char** argv) {
 
 	Game game(100, 100, 700, 700, true);
-	game.addObject(new ExamplePlayer(100, 100, 1));
+	ExamplePlayer* player = new ExamplePlayer("player", 100, 100, 1);
+	game.addObject(player);
 	game.mainLoop();
+	delete player;
 	return 0;
 }

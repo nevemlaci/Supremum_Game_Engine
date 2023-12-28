@@ -6,7 +6,10 @@
 #include "player.h"
 #include <any>
 #include <vector>
+#include <map>
 #include <windows.h>
+#include "gameobject.h"
+
 
 
 class Game {
@@ -49,21 +52,15 @@ public:
 	/// <returns>
 	/// returns 0 on success
 	/// </returns>
-	int addObject(Sprite* object_ptr);
-
-	/// <summary>
-	/// Adds a player to the game.
-	/// </summary>
-	/// <param name="p_player">
-	/// The player to be added.
-	/// NULL should be passed if no player is needed, or if a custom player class is used.
-	/// </param>
-	void addPlayer(ExamplePlayer p_player);
+	int addObject(GameObject* object_ptr);
 
 	/// <summary>
 	/// The input handler of the game. It is used to handle all input events.
 	/// </summary>
 	Input input;
+
+	SDL_Texture* getSpriteSheet();
+	SDL_Renderer* getRenderer();
 private:
 	
 	SDL_Window* window;
@@ -81,12 +78,7 @@ private:
 	SDL_Event events;
 
 	/// <summary>
-	/// The player of the game. Not necessary to be used. 
+	/// Array of GameObject pointers. It stores all objects in the game that are inheriting from GameObject.
 	/// </summary>
-	ExamplePlayer player;
-
-	/// <summary>
-	/// Array of Sprite pointers. It stores all objects in the game that are inheriting from Sprite.
-	/// </summary>
-	std::vector<Sprite*> sprites;
+	std::map<std::string,GameObject*> objects;
 };

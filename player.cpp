@@ -8,5 +8,7 @@ int ExamplePlayer::Update(Game* game) {
 	velX = keys.b_right - keys.b_left;
 	position.x += (velX * PLAYER_SPEED);
 	position.y += (velY * PLAYER_SPEED);
+
+	Render(game->getRenderer(), renderIndex, game->getSpriteSheet());
 	return 0;
 }

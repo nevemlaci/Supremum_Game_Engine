@@ -1,16 +1,18 @@
 #pragma once
 #include <SDL.h>
 #include "constants.h"
+#include "gameobject.h"
 
 class Game;
 
-class Sprite{
+class Sprite:public GameObject{
 public:
 	/// <summary>
 	/// Default constructor for the Sprite class. Sets the position to 0,0.
 	/// </summary>
 	Sprite();
-	Sprite(int x, int y, int p_renderIndex);
+	Sprite(std::string p_id, int x, int y, int p_renderIndex);
+
 	void setPosition(int x , int y);
 	/// <summary>
 	/// Renders the sprite. Normally isn't called by the user and called once every frame in the main game loop.
