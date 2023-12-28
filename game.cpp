@@ -1,27 +1,37 @@
 #include "game.h"
+#include <SDL_mixer.h>
 
+/*
 Game::Game() {
 	window = SDL_CreateWindow("", 400, 400, 800, 480, 0);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
 	spriteSheet = IMG_LoadTexture(renderer, "spritemap.png");
 	input = Input();
 }
+*/
 
 Game::Game(
 	int window_x,
 	int window_y,
 	int window_width,
 	int window_height,
-	bool hide_console){
-
+	bool hide_console
+) {
+	SDL_Init(SDL_INIT_EVERYTHING);
+	
 	window = SDL_CreateWindow("", window_x, window_y, window_width, window_height, 0);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
 	spriteSheet = IMG_LoadTexture(renderer, "spritemap.png");
 	input = Input();
 	if(hide_console) {
-		HWND console = GetConsoleWindow();
-		ShowWindow(console, SW_HIDE);
+		std::cout << "Hiding console..." << std::endl;
+		this->hideConsole();
 	}
+}
+
+void Game::hideConsole() {
+	HWND console = GetConsoleWindow();
+	ShowWindow(console, SW_HIDE);
 }
 
 int Game::addObject(GameObject* object_ptr) {
@@ -59,4 +69,8 @@ SDL_Texture* Game::getSpriteSheet() {
 
 SDL_Renderer* Game::getRenderer() {
 	return renderer;
+}
+
+AudioManager& Game::Audio() {
+	return audioManager;
 }

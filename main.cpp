@@ -19,9 +19,11 @@
 */
 int main(int argc, char** argv) {
 
-	Game game(100, 100, 700, 700, true);
-	ExamplePlayer* player = new ExamplePlayer("player", 100, 100, 1);
+	Game game(400, 400, 800, 480, true);
+	ExamplePlayer* player = new ExamplePlayer("player", 100, 100, 0);
 	game.addObject(player);
+	game.Audio().setMusic("music.wav");
+	game.Audio().startMusic();
 	game.mainLoop();
 	delete player;
 	return 0;

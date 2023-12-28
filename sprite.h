@@ -10,8 +10,7 @@ public:
 	/// <summary>
 	/// Default constructor for the Sprite class. Sets the position to 0,0.
 	/// </summary>
-	Sprite();
-	Sprite(std::string p_id, int x, int y, int p_renderIndex);
+	Sprite(std::string p_id="", int x=0, int y=0, int p_renderIndex=0);
 
 	void setPosition(int x , int y);
 	/// <summary>
