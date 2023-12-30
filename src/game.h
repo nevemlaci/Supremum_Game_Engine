@@ -39,7 +39,7 @@ public:
 	/// @brief adds an object to the game
 	/// @param object_ptr Pointer to the object to be added. All objects that inherit from GameObject can be added.
 	/// @return returns 0 on success
-	int addObject(GameObject* object_ptr);
+	int addObject(std::unique_ptr<GameObject> object);
 
 	/// @brief The input handler of the game.
 	/// @todo Rework
@@ -73,7 +73,7 @@ private:
 
 	/// @brief  A map of all objects in the game.
 	/// @todo fix memory leak when adding object of the same id
-	std::map<std::string,GameObject*> objects;
+	std::map<std::string, std::unique_ptr<GameObject> > objects;
 
 
 };

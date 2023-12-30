@@ -25,12 +25,8 @@ void Game::hideConsole() {
 	ShowWindow(console, SW_HIDE);
 }
 
-int Game::addObject(GameObject* object_ptr) {
-	if (objects.contains(object_ptr->GetId())) {
-		delete objects[object_ptr->GetId()];
-	}
-
-	objects[object_ptr->GetId()] = object_ptr;
+int Game::addObject(std::unique_ptr<GameObject> object) {
+	objects[object->GetId()] = std::move(object);
 	return 0;
 }
 
@@ -52,7 +48,7 @@ int Game::mainLoop() {
 
 		SDL_RenderClear(renderer);
 
-		for (auto object : objects) {
+		for (auto& object : objects) {
 			object.second->Update(this);
 		}
 
