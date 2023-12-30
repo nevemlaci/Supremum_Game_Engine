@@ -43,7 +43,7 @@ public:
 
 	/// @brief The input handler of the game.
 	/// @todo Rework
-	Input input;
+	std::unique_ptr<Input> input;
 
 	/// @brief 
 	/// @return returns the sprite sheet of the game
@@ -64,7 +64,8 @@ private:
 
 	AudioManager audioManager;
 
-	/// @brief The sprite sheet of the game. Used to store all textures used in the game to improve performance.
+	/// @brief The sprite sheet of the game.
+	/// Used to store all textures used in the game to improve performance.
 	SDL_Texture* spriteSheet;
 	
 	/// @brief The current SDL_Event of the game

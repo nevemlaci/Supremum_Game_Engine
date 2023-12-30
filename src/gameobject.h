@@ -14,6 +14,8 @@ public:
 	/// @return 
 	virtual int Update(Game* game);
 
+	/// @brief get the id of the GameObject
+	/// @return std::string id of the GameObject
 	std::string GetId();
 protected:
 	std::string id;

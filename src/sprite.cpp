@@ -29,7 +29,7 @@ void Sprite::setRenderIndex(int index) {
 }
 
 int Sprite::Update(Game* game) {
-	std::cout << "Sprite Update" << std::endl;
+	//std::cout << "Sprite Update" << std::endl;
 	Render(game->getRenderer(), renderIndex, game->getSpriteSheet());
 	return 0;
 }

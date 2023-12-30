@@ -13,7 +13,7 @@ Game::Game(
 	window = SDL_CreateWindow("", window_x, window_y, window_width, window_height, 0);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
 	spriteSheet = IMG_LoadTexture(renderer, "spritemap.png");
-	input = Input();
+	this->input = std::make_unique<Input>();
 	if(hide_console) {
 		std::cout << "Hiding console..." << std::endl;
 		this->hideConsole();
@@ -35,24 +35,27 @@ int Game::addObject(GameObject* object_ptr) {
 }
 
 int Game::mainLoop() {
+
+	bool keychanged = false;
+	bool mousechanged = false;
+
 	while (true) {
 		while (SDL_PollEvent(&events)) {
 			switch (events.type) {
-			case SDL_KEYDOWN:
-				input.handleKeyboardInput(&events.key);
-				break;
-			case SDL_KEYUP:
-				input.handleKeyboardInput(&events.key);
-				break;
-			case SDL_QUIT:
-				return 0;
-				break;
+				case SDL_QUIT:
+					return 0;
+					break;
 			}
 		}
+
+		input->updateMouse();
+
 		SDL_RenderClear(renderer);
+
 		for (auto object : objects) {
 			object.second->Update(this);
 		}
+
 		SDL_RenderPresent(renderer);
 	}
 	return 1;
