@@ -35,6 +35,10 @@ void Game::hideConsole() {
 }
 
 int Game::addObject(GameObject* object_ptr) {
+	if (objects.contains(object_ptr->GetId())) {
+		delete objects[object_ptr->GetId()];
+	}
+
 	objects[object_ptr->GetId()] = object_ptr;
 	return 0;
 }

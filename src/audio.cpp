@@ -8,6 +8,7 @@ AudioManager::AudioManager()
 
 void AudioManager::setMusic(const char* path)
 {
+	Mix_FreeMusic(this->bgmusic);
 	this->bgmusic = Mix_LoadMUS(path);
 	if (!this->bgmusic) {
 		std::cout << "Failed to load music! SDL_mixer Error: " << Mix_GetError() << std::endl;
@@ -27,6 +28,9 @@ void AudioManager::stopMusic()
 
 void AudioManager::loadSFX(const char* path, std::string id)
 {
+	if (this->sfx.contains(id)) {
+		Mix_FreeChunk(this->sfx[id]);
+	}
 	this->sfx[id] = Mix_LoadWAV(path);
 }
 
