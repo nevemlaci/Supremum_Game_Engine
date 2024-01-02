@@ -1,6 +1,8 @@
 #include "game.h"
 #include <SDL_mixer.h>
 
+/// @todo make a f.ing renderer class
+
 Game::Game(
 	int window_x,
 	int window_y,
@@ -13,6 +15,18 @@ Game::Game(
 	renderer(SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED)),
 	input(std::make_unique<Input>())
 {
+	if (sdlinit != 0) {
+		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
+		return;
+	}
+	if (!window) {
+		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
+		return;
+	}
+	if (!renderer) {
+		std::cout << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
+		return;
+	}
 	if(hide_console) {
 		std::cout << "Hiding console..." << std::endl;
 		this->hideConsole();
