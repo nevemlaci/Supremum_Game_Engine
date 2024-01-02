@@ -9,9 +9,11 @@ This is a hobby project to familiarize myself with OOP and C++ in general. You'l
 
 * Then open game.sln in Visual Studio. Install SDL2 from their Github Repo either by building it or downloading it from releases: https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5
 
-* Put the `.lib` files in a `./lib` directory(path is relative to `game.sln`). VS might ask you to drop the dlls into the parent(project) folder too.
+* Put the `.lib` files in a `./lib` directory(path is relative to `game.sln`). Copy the `dll`s into the parent(project) folder or specify your own folder for them by setting `PATH` withing your VS project.
 
 * Build it using Visual Studio. :) If you run into any problems check the project setup and try to set the linker up manually.
+
+* An example project is available at https://github.com/nevemlaci/sge_test
 
 ## Using SGE
 
