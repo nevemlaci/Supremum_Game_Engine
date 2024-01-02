@@ -43,10 +43,6 @@ public:
 	/// @return returns 0 on success
 	int addObject(std::unique_ptr<GameObject> object);
 
-	/// @brief The input handler of the game.
-	/// @todo Rework
-	std::unique_ptr<Input> input;
-
 	/// @brief 
 	/// @return returns the sprite sheet of the game
 	SDL_Texture* getSpriteSheet();
@@ -59,6 +55,8 @@ public:
 	/// @return returns a reference to the game's AudioManager
 	AudioManager& Audio();
 
+	InputManager& Input();
+
 	std::unique_ptr<GameObject>& getObject(std::string id);
 private:
 	int sdlinit;
@@ -67,6 +65,8 @@ private:
 	SDL_Renderer* renderer;
 
 	AudioManager audioManager;
+
+	InputManager inputManager;
 
 	/// @brief The sprite sheet of the game.
 	/// Used to store all textures used in the game to improve performance.

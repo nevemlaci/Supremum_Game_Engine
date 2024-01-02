@@ -13,7 +13,8 @@ Game::Game(
 	sdlinit(SDL_Init(SDL_INIT_EVERYTHING)),
 	window(SDL_CreateWindow("", window_x, window_y, window_width, window_height, 0)),
 	renderer(SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED)),
-	input(std::make_unique<Input>())
+	audioManager(AudioManager::AudioManager()),
+	inputManager(InputManager::InputManager())
 {
 	if (sdlinit != 0) {
 		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
@@ -46,23 +47,23 @@ int Game::addObject(std::unique_ptr<GameObject> object) {
 int Game::mainLoop() {
 
 	while (true) {
-		while (SDL_PollEvent(&events)) {
-			switch (events.type) {
+		while (SDL_PollEvent(&(this->events))) {
+			switch (this->events.type) {
 				case SDL_QUIT:
 					return 0;
 					break;
 			}
 		}
 
-		input->updateMouse();
+		this->inputManager.updateMouse();
 
-		SDL_RenderClear(renderer);
+		SDL_RenderClear(this->renderer);
 
-		for (auto& object : objects) {
+		for (auto& object : this->objects) {
 			object.second->Update(*this); //this is the most heathen line of code I've ever written
 		}
 
-		SDL_RenderPresent(renderer);
+		SDL_RenderPresent(this->renderer);
 	}
 	return 1;
 }
@@ -77,6 +78,10 @@ SDL_Renderer* Game::getRenderer() {
 
 AudioManager& Game::Audio() {
 	return this->audioManager;
+}
+
+InputManager& Game::Input() {
+	return this->inputManager;
 }
 
 std::unique_ptr<GameObject>& Game::getObject(std::string id) {

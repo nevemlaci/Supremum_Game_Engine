@@ -1,11 +1,11 @@
 #include "input.h"
 
-Input::Input()
+InputManager::InputManager()
 {
 	this->mouse.leftclick = this->mouse.rightclick = this->mouse.middleclick = false;
 }
 
-void Input::updateMouse() {
+void InputManager::updateMouse() {
 	Uint32 mouseState = SDL_GetMouseState(&(this->mouse.x), &(this->mouse.y));
 	
 	if(mouseState & SDL_BUTTON(SDL_BUTTON_LEFT)) {
@@ -26,6 +26,6 @@ void Input::updateMouse() {
 	}
 }
 
-bool Input::checkKey(SDL_Scancode key) {
+bool InputManager::checkKey(SDL_Scancode key) {
 	return this->keyState[key];
 }

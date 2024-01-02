@@ -23,9 +23,9 @@ enum mousebutton {
 	RIGHT, LEFT, MIDDLE
 };
 
-class Input {
+class InputManager {
 public:
-	Input();
+	InputManager();
 
 	/// @brief updates the mouse position and mouse button states. 
 	/// @note this function is called every frame and shouldn't be called manually.
