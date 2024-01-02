@@ -3,7 +3,7 @@
 
 GameObject::GameObject(std::string p_id):id(p_id)
 {
-	id=p_id;
+	this->id=p_id;
 }
 
 int GameObject::Update(Game& game) {
@@ -11,6 +11,6 @@ int GameObject::Update(Game& game) {
 }
 
 std::string GameObject::GetId() {
-	return id;
+	return this->id;
 }
 

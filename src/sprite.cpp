@@ -5,19 +5,11 @@ Sprite::Sprite(std::string p_id, int x, int y, int p_renderIndex):
 	position({x,y,SPRITE_SIZE,SPRITE_SIZE}),
 	renderIndex(p_renderIndex),
 	Sprite::GameObject(p_id)
-
-{
-	position.x = x;
-	position.y = y;
-	position.w = SPRITE_SIZE;
-	position.h = SPRITE_SIZE;
-	renderIndex = p_renderIndex;
-	id = p_id;
-}
+{}
 
 void Sprite::setPosition(int x, int y) {
-	position.x = x;
-	position.y = y;
+	this->position.x = x;
+	this->position.y = y;
 }
 
 void Sprite::Render(SDL_Renderer* renderer, int textureIndex, SDL_Texture* sprite_textures) {
@@ -26,15 +18,15 @@ void Sprite::Render(SDL_Renderer* renderer, int textureIndex, SDL_Texture* sprit
 }
 
 int Sprite::getRenderIndex() {
-	return renderIndex;
+	return this->renderIndex;
 }
 
-void Sprite::setRenderIndex(int index) {
-	renderIndex = index;
+void Sprite::setRenderIndex(int renderIndex) {
+	this->renderIndex = renderIndex;
 }
 
-int Sprite::Update(Game* game) {
+int Sprite::Update(Game& game) {
 	//std::cout << "Sprite Update" << std::endl;
-	Render(game->getRenderer(), renderIndex, game->getSpriteSheet());
+	Render(game.getRenderer(), this->renderIndex, game.getSpriteSheet());
 	return 0;
 }

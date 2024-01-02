@@ -2,7 +2,7 @@
 
 Input::Input()
 {
-	this->mouse.leftclick = mouse.rightclick = mouse.middleclick = false;
+	this->mouse.leftclick = this->mouse.rightclick = this->mouse.middleclick = false;
 }
 
 void Input::updateMouse() {

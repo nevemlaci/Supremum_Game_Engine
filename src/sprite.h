@@ -25,12 +25,12 @@ public:
 	/// Sets the render index of the sprite. This is used to determine where the renderer will look for the sprite on the spritesheet.
 	/// </summary>
 	/// <param name="index"></param>
-	void setRenderIndex(int index);
+	void setRenderIndex(int renderIndex);
 	/// <summary>
 	/// Ran on every frame in the game loop by default. Should be edited in child classes to add functionality.
 	/// </summary>
 	/// <returns>Returns 0 by default</returns>
-	virtual int Update(Game* game);
+	virtual int Update(Game& game);
 protected:
 	SDL_Rect position;
 	int renderIndex;

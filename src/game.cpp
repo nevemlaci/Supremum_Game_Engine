@@ -39,14 +39,11 @@ void Game::hideConsole() {
 }
 
 int Game::addObject(std::unique_ptr<GameObject> object) {
-	objects[object->GetId()] = std::move(object);
+	this->objects[object->GetId()] = std::move(object);
 	return 0;
 }
 
 int Game::mainLoop() {
-
-	bool keychanged = false;
-	bool mousechanged = false;
 
 	while (true) {
 		while (SDL_PollEvent(&events)) {
@@ -71,17 +68,17 @@ int Game::mainLoop() {
 }
 
 SDL_Texture* Game::getSpriteSheet() {
-	return spriteSheet;
+	return this->spriteSheet;
 }
 
 SDL_Renderer* Game::getRenderer() {
-	return renderer;
+	return this->renderer;
 }
 
 AudioManager& Game::Audio() {
-	return audioManager;
+	return this->audioManager;
 }
 
 std::unique_ptr<GameObject>& Game::getObject(std::string id) {
-	return objects[id];
+	return this->objects[id];
 }
