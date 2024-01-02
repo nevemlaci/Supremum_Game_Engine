@@ -13,7 +13,6 @@ Game::Game(
 	renderer(SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED)),
 	input(std::make_unique<Input>())
 {
-	this->input = std::make_unique<Input>();
 	if(hide_console) {
 		std::cout << "Hiding console..." << std::endl;
 		this->hideConsole();
@@ -49,7 +48,7 @@ int Game::mainLoop() {
 		SDL_RenderClear(renderer);
 
 		for (auto& object : objects) {
-			object.second->Update(this);
+			object.second->Update(*this); //this is the most heathen line of code I've ever written
 		}
 
 		SDL_RenderPresent(renderer);
