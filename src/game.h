@@ -56,6 +56,8 @@ public:
 	/// @brief 
 	/// @return returns a reference to the game's AudioManager
 	AudioManager& Audio();
+
+	std::unique_ptr<GameObject>& getObject(std::string id);
 private:
 	
 	SDL_Window* window;

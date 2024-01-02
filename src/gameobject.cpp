@@ -12,3 +12,4 @@ int GameObject::Update(Game* game) {
 std::string GameObject::GetId() {
 	return id;
 }
+

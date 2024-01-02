@@ -68,3 +68,7 @@ SDL_Renderer* Game::getRenderer() {
 AudioManager& Game::Audio() {
 	return audioManager;
 }
+
+std::unique_ptr<GameObject>& Game::getObject(std::string id) {
+	return objects[id];
+}
