@@ -1,7 +1,12 @@
 #include "sprite.h"
 #include "game.h"
 
-Sprite::Sprite(std::string p_id, int x, int y, int p_renderIndex) {
+Sprite::Sprite(std::string p_id, int x, int y, int p_renderIndex):
+	position({x,y,SPRITE_SIZE,SPRITE_SIZE}),
+	renderIndex(p_renderIndex),
+	Sprite::GameObject(p_id)
+
+{
 	position.x = x;
 	position.y = y;
 	position.w = SPRITE_SIZE;

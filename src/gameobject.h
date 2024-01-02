@@ -12,7 +12,7 @@ public:
 	/// @brief Update function called every frame
 	/// @param game pointer to the game @todo change to a reference
 	/// @return 
-	virtual int Update(Game* game);
+	virtual int Update(Game& game);
 
 	/// @brief get the id of the GameObject
 	/// @return std::string id of the GameObject

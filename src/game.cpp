@@ -7,12 +7,12 @@ Game::Game(
 	int window_width,
 	int window_height,
 	bool hide_console
-) {
-	SDL_Init(SDL_INIT_EVERYTHING);
-	
-	window = SDL_CreateWindow("", window_x, window_y, window_width, window_height, 0);
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
-	spriteSheet = IMG_LoadTexture(renderer, "spritemap.png");
+) :
+	sdlinit(SDL_Init(SDL_INIT_EVERYTHING)),
+	window(SDL_CreateWindow("", window_x, window_y, window_width, window_height, 0)),
+	renderer(SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED)),
+	input(std::make_unique<Input>())
+{
 	this->input = std::make_unique<Input>();
 	if(hide_console) {
 		std::cout << "Hiding console..." << std::endl;

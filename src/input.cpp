@@ -1,6 +1,7 @@
 #include "input.h"
 
-Input::Input() {
+Input::Input()
+{
 	this->mouse.leftclick = mouse.rightclick = mouse.middleclick = false;
 }
 

@@ -22,12 +22,14 @@ public:
 	/// @param window_height Window height
 	/// @param hide_console Wether to hide the console or not
 	Game(
-		int window_x=400,
-		int window_y=400,
-		int window_width=800,
-		int window_height=480,
-		bool hide_console=false
+		int window_x = 400,
+		int window_y = 400,
+		int window_width = 800,
+		int window_height = 480,
+		bool hide_console = false
 	);
+		
+		
 
 	/// @brief Hides the console window
 	void hideConsole();
@@ -59,7 +61,7 @@ public:
 
 	std::unique_ptr<GameObject>& getObject(std::string id);
 private:
-	
+	int sdlinit;
 	SDL_Window* window;
 
 	SDL_Renderer* renderer;
