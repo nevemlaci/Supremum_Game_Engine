@@ -27,9 +27,7 @@ public:
 		int window_width = 800,
 		int window_height = 480,
 		bool hide_console = false
-	);
-		
-		
+	);	
 
 	/// @brief Hides the console window
 	void hideConsole();
@@ -55,9 +53,10 @@ public:
 	/// @return returns a reference to the game's AudioManager
 	AudioManager& Audio();
 
+	/// @brief 
+	/// @return returns a reference to the game's InputManager
 	InputManager& Input();
 
-	std::unique_ptr<GameObject>& getObject(std::string id);
 private:
 	int sdlinit;
 	SDL_Window* window;
@@ -76,7 +75,6 @@ private:
 	SDL_Event events;
 
 	/// @brief  A map of all objects in the game.
-	/// @todo fix memory leak when adding object of the same id
 	std::map<std::string, std::unique_ptr<GameObject> > objects;
 
 

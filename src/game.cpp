@@ -60,7 +60,7 @@ int Game::mainLoop() {
 		SDL_RenderClear(this->renderer);
 
 		for (auto& object : this->objects) {
-			object.second->Update(*this); //this is the most heathen line of code I've ever written
+			object.second->Update(*this); 
 		}
 
 		SDL_RenderPresent(this->renderer);
@@ -84,6 +84,3 @@ InputManager& Game::Input() {
 	return this->inputManager;
 }
 
-std::unique_ptr<GameObject>& Game::getObject(std::string id) {
-	return this->objects[id];
-}
