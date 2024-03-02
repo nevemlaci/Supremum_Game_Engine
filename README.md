@@ -13,8 +13,6 @@ This is a hobby project to familiarize myself with OOP and C++ in general. You'l
 
 * Build it using Visual Studio. :) If you run into any problems check the project setup and try to set the linker up manually.
 
-* An example project is available at https://github.com/nevemlaci/sge_test
-
 ## Using SGE
 
 * Check out the Wiki to see how to setup your project with SGE.
