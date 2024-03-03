@@ -1,3 +1,5 @@
+*The project is stalled until I finish my SDL Wrapper.*
+
 # Supremum
 
 SUPREMUM GAME ENGINE is my first take at creating something actually object oriented. It is some sort of an SDL wrapper for C++ with some basic extensions to make creating games easier.
